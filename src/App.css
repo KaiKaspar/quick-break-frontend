@@ -6,43 +6,23 @@
 
 .Footer {
   text-align: center;
-  background-color: #F7F9FB;
+  background-color: #31708E;
   height: 100px
 }
 
 .MainContainer {
   text-align: center;
-  height: fill-available;
+  height: stretch;
   vertical-align: middle;
   display: flex;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 .homepage {
   position: relative;
-  background: #000000 url(https://i.imgur.com/dNmKVQT.jpg) 100% 100% !important;
-  background-repeat: repeat;
-  background-size: cover;
+  background: #F7F9FB;
+  background-image: url('./waterfall.png');
+  background-repeat: no-repeat;
+  background-position: center;
   vertical-align: center;
   display: flex;
   align-items: center;

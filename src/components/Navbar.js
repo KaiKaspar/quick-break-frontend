@@ -5,7 +5,7 @@ class Navbar extends Component {
   render() {
     return (
       <div id="Navbar">
-        <h1>QuickBreak</h1>
+        <img src={require(`../Logo.png`)} alt =''/>
       </div>
     );
   }
