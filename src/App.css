@@ -1,5 +1,19 @@
-.App {
+.Navbar {
   text-align: center;
+  margin-bottom: 2%;
+}
+
+.Footer {
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.MainContainer {
+  background: #000000 url(https://i.imgur.com/dNmKVQT.jpg) 100% 100%;
+  background-repeat: repeat;
+  background-size: cover;
+  text-align: center;
+  height: 50rem
 }
 
 .App-logo {
