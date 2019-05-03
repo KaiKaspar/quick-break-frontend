@@ -3,10 +3,10 @@ import React from 'react'
 import SignIn from '../components/SignIn'
 import About from '../components/About'
 
-const Homepage = () => (
+const Homepage = ({signIn}) => (
     <div className='homepage' >
           <About />
-          <SignIn />
+          <SignIn signIn={signIn}/>
     </div>
 )
 
