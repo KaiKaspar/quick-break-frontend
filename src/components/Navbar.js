@@ -4,7 +4,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div className="Navbar">
+      <div id="Navbar">
         <h1>QuickBreak</h1>
       </div>
     );

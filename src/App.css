@@ -1,19 +1,20 @@
-.Navbar {
+#Navbar {
   text-align: center;
-  margin-bottom: 2%;
+  background-color: #F7F9FB;
+  min-height: 6vh;
 }
 
 .Footer {
   text-align: center;
-  margin-bottom: 2%;
+  background-color: #F7F9FB;
+  height: 100px
 }
 
 .MainContainer {
-  background: #000000 url(https://i.imgur.com/dNmKVQT.jpg) 100% 100%;
-  background-repeat: repeat;
-  background-size: cover;
   text-align: center;
-  height: 50rem
+  height: fill-available;
+  vertical-align: middle;
+  display: flex;
 }
 
 .App-logo {
@@ -37,11 +38,21 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.homepage {
+  position: relative;
+  background: #000000 url(https://i.imgur.com/dNmKVQT.jpg) 100% 100% !important;
+  background-repeat: repeat;
+  background-size: cover;
+  vertical-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly
+}
+
+.hompepageItem {
+  background-color: #F7F9FB;
+  padding: 1rem;
+  border: 1px solid #8080803d;
+  border-radius: 20px;
+  width: 30%;
 }
