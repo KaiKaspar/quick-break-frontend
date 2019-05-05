@@ -6,7 +6,7 @@
 
 .Footer {
   text-align: center;
-  background-color: #31708E;
+  background-color: #F7F9FB;
   height: 100px
 }
 
@@ -20,7 +20,8 @@
 .homepage {
   position: relative;
   background: #F7F9FB;
-  background-image: url('./waterfall.png');
+  background-image: url('./FriendsWaterfall.png');
+  background-size: 80% 100%;
   background-repeat: no-repeat;
   background-position: center;
   vertical-align: center;
