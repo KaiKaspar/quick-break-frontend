@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 
 import Homepage from './Homepage';
+import Dashboard from './Dashboard';
 
 const baseUrl = 'http://localhost:3000/'
-const loginUrl = baseUrl + '/login'
+const loginUrl = baseUrl + 'login'
 
 class MainContainer extends Component {
 
-  state={
+  state = {
     currentUser: {}
   }
 
@@ -26,6 +27,12 @@ class MainContainer extends Component {
     const validUser = Object.keys(currentUser).length > 0 &&
     !Object.keys(currentUser).includes('error')
 
+    {/*return (
+      <div className="MainContainer">
+        <Dashboard />
+      </div>
+    )*/}
+
     return (
       <Router>
         <div className="MainContainer">
@@ -33,8 +40,8 @@ class MainContainer extends Component {
         </div>
       </Router>
     );
-  }
 
+  }
 }
 
 export default MainContainer;
