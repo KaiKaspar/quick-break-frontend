@@ -31,6 +31,22 @@ class Trip extends Component {
             </a>
           </Card.Content>
         </Card>
+          <Card style={{background: '#F7F9FB'}}>
+            <Image src='https://www.telegraph.co.uk/content/dam/Travel/2018/January/white-plane-sky.jpg?imwidth=450' />
+            <Card.Content>
+              <Card.Header>To be confirmed...</Card.Header>
+              <Card.Meta>
+                <span className='date'>To be confirmed...</span>
+              </Card.Meta>
+              <Card.Description>Second test holiday</Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+              <a>
+                <Icon name='user' />
+                Kai, Max
+              </a>
+            </Card.Content>
+          </Card>
         <Card style={{background: '#F7F9FB'}}>
           <Image src='https://cdn-04.independent.ie/life/travel/article34985584.ece/85dd6/AUTOCROP/w620/iceland.jpg' />
           <Card.Content>
@@ -38,7 +54,7 @@ class Trip extends Component {
             <Card.Meta>
               <span className='date'>1/12/2020</span>
             </Card.Meta>
-            <Card.Description>Second test holiday.</Card.Description>
+            <Card.Description>Third test holiday.</Card.Description>
           </Card.Content>
           <Card.Content extra>
             <a>

@@ -27,19 +27,19 @@ class MainContainer extends Component {
     const validUser = Object.keys(currentUser).length > 0 &&
     !Object.keys(currentUser).includes('error')
 
-    {/*return (
+    return (
       <div className="MainContainer">
         <Dashboard />
       </div>
-    )*/}
+    )
 
-    return (
+    {/*return (
       <Router>
         <div className="MainContainer">
           <Route exact path='/' component={() => <Homepage signIn={getCurrentUser} validUser={validUser} />} />
         </div>
       </Router>
-    );
+    )*/}
 
   }
 }
