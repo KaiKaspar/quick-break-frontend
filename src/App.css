@@ -7,7 +7,8 @@
 .Footer {
   text-align: center;
   background-color: #F7F9FB;
-  height: 100px
+  height: 100px;
+  color: #687864;
 }
 
 .MainContainer {
@@ -36,4 +37,17 @@
   border: 1px solid #8080803d;
   border-radius: 20px;
   width: 30%;
+  color: #687864;
+}
+
+.dashboard {
+  text-align: center;
+}
+
+.new-trip {
+  background-color: #687864;
+  padding: 1rem;
+  border: 1px solid #8080803d;
+  border-radius: 20px;
+  color: #F7F9FB;
 }
