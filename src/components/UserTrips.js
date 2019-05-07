@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Trip from './Trip';
+import { Card } from 'semantic-ui-react';
 
 class UserTrips extends Component {
 
@@ -7,9 +8,10 @@ class UserTrips extends Component {
     const { trips } = this.props
     return (
       <div>
-        {/*{trips.map(t => <Trip trip={t} key={t.id}/>)}*/}
         <h1>Your Trips</h1>
-        <Trip />
+        <Card.Group className='centered' >
+        {trips.map(t => <Trip trip={t} key={t.id}/>)}
+        </Card.Group>
       </div>
     );
   }

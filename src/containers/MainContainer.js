@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 
 import Homepage from './Homepage';
 import Dashboard from './Dashboard';
+import TripShow from './TripShow';
 
 const baseUrl = 'http://localhost:3000/'
 const loginUrl = baseUrl + 'login'
@@ -29,7 +30,7 @@ class MainContainer extends Component {
 
     return (
       <div className="MainContainer">
-        <Dashboard />
+        <TripShow />
       </div>
     )
 
@@ -37,6 +38,7 @@ class MainContainer extends Component {
       <Router>
         <div className="MainContainer">
           <Route exact path='/' component={() => <Homepage signIn={getCurrentUser} validUser={validUser} />} />
+          <Route path='/dashboard' component={() => <Dashboard user={this.state.currentUser} />} />
         </div>
       </Router>
     )*/}
