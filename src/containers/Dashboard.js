@@ -9,7 +9,7 @@ const Dashboard = (props) => (
     <div className='dashboard' >
       <br></br>
       <NewTrip />
-      <UserTrips />
+      <UserTrips trips={props.user.trips}/>
     </div>
   </Container>
 )

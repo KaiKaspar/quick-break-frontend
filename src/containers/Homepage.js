@@ -5,7 +5,7 @@ import SignIn from '../components/SignIn'
 import About from '../components/About'
 
 const Homepage = ({signIn, validUser}) => (
-  <div className='homepage' >
+  <div className='homepage'>
     {validUser && <Redirect to='/dashboard' />}
     <About />
     <SignIn signIn={signIn}/>
