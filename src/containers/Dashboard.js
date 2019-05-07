@@ -7,7 +7,6 @@ import { Container } from 'semantic-ui-react'
 const Dashboard = (props) => (
   <Container textAlign='center'>
     <div className='dashboard' >
-      {props.user.name}
       <br></br>
       <NewTrip />
       <UserTrips trips={props.user.trips}/>
