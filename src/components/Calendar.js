@@ -47,9 +47,13 @@ class Calendar extends Component {
     );
   }
 
+  testHandler = () => {
+    debugger
+  }
+
   render() {
     return (
-      <DayPicker onDayClick={this.handleDayClick} selectedDays={this.state.selectedDays} modifiersStyles={this.modifiersStyles} renderDay={this.renderDay} canChangeMonth={false} />
+      <DayPicker onDayClick={this.handleDayClick} selectedDays={this.state.selectedDays} modifiersStyles={this.modifiersStyles} renderDay={this.renderDay} canChangeMonth={false} month={new Date(2019, 5)} />
     );
   }
 
