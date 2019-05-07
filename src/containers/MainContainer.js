@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 
 import Homepage from './Homepage';
 import Dashboard from './Dashboard';
+import CalendarTest from './CalendarTest'
 
 const baseUrl = 'http://localhost:3000/'
 const loginUrl = baseUrl + 'login'
@@ -36,7 +37,8 @@ class MainContainer extends Component {
     return (
       <Router>
         <div className="MainContainer">
-          <Route exact path='/' component={() => <Homepage signIn={getCurrentUser} validUser={validUser} />} />
+          {/*<Route exact path='/' component={() => <Homepage signIn={getCurrentUser} validUser={validUser} />} />*/}
+          <CalendarTest />
         </div>
       </Router>
     );
