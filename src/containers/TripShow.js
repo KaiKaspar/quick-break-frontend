@@ -8,8 +8,8 @@ class TripShow extends Component {
   render() {
     return (
       <div className='trip-show'>
-        <TripDetails />
-        <TripUsers />
+        <TripDetails trip={this.props.trip}/>
+        <TripUsers trip={this.props.trip}/>
       </div>
     )
   }

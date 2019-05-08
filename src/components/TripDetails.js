@@ -5,11 +5,14 @@ import TripName from './TripName';
 class TripDetails extends Component {
 
   render() {
+    debugger
     return (
       <div className="trip-show-item">
-        <TripName />
+        <TripName trip={this.props.trip}/>
         <br></br>
-        <Calendar />
+
+        <Calendar month={this.props.trip.month}/>
+
       </div>
     );
   }

@@ -5,8 +5,8 @@ class TripName extends Component {
   render() {
     return (
       <div>
-        <h1>Test Trip 1 ✈️</h1>
-        <h2>Paris 🌍</h2>
+        <h1>{this.props.trip.name}</h1>
+        <h2>{this.props.trip.location}</h2>
       </div>
     );
   }
