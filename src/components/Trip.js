@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react'
+import TripShow from '../containers/TripShow'
+import { Redirect } from 'react-router-dom';
 
 class Trip extends Component {
 
-  /*state = {
-    tripName: props.trip.name,
-    tripLocation: props.trip.location,
-    tripDate: props.trip.date,
-    tripUsers: props.trip.users
-  }*/
-
+  handleClick = () => {
+    console.log(this.props.trip.name);
+  }
 
   render() {
 
@@ -72,10 +70,11 @@ class Trip extends Component {
       tripMonth = 'December'
     }
 
+
     const {name, start_date, duration, trip_type, location} = this.props.trip
 
     return (
-        <Card style={{background: '#F7F9FB'}}>
+        <Card style={{background: '#F7F9FB'}} onClick={() => this.props.routerProps.history.push('/TripShow')}>
           <Image src={tripPic} />
           <Card.Content>
             <Card.Header>
@@ -87,10 +86,10 @@ class Trip extends Component {
             <Card.Description>{location}</Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <a>
+            <p>
               <Icon name='user' />
               {this.props.trip.users.join(', ')}
-            </a>
+            </p>
           </Card.Content>
         </Card>
     );

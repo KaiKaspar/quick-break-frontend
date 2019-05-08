@@ -29,7 +29,7 @@ class Calendar extends Component {
     const date = day.getDate();
     const dateStyle = {
       position: 'absolute',
-      color: 'lightgray',
+      color: '#687864',
       bottom: 0,
       right: 0,
       fontSize: 20,
@@ -51,8 +51,9 @@ class Calendar extends Component {
   }
 
   render() {
+    const month = this.props.month - 1
     return (
-      <DayPicker onDayClick={this.handleDayClick} selectedDays={this.state.selectedDays} modifiersStyles={this.modifiersStyles} renderDay={this.renderDay} canChangeMonth={false} month={new Date(2019, 5)} />
+      <DayPicker onDayClick={this.handleDayClick} selectedDays={this.state.selectedDays} modifiersStyles={this.modifiersStyles} renderDay={this.renderDay} canChangeMonth={false} month={new Date(2019, month)} />
     );
   }
 
