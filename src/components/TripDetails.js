@@ -10,7 +10,9 @@ class TripDetails extends Component {
       <div className="trip-show-item">
         <TripName trip={this.props.trip}/>
         <br></br>
+
         <Calendar month={this.props.trip.month}/>
+
       </div>
     );
   }

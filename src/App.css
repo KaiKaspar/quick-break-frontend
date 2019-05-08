@@ -67,3 +67,12 @@
   border-radius: 20px;
   color: #F7F9FB;
 }
+
+.ui.input {
+  margin: 1rem
+}
+
+.dropdown-container {
+  display: inline;
+  margin: 1rem
+}
