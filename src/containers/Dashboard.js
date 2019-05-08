@@ -4,12 +4,14 @@ import UserTrips from '../components/UserTrips';
 import NewTrip from '../components/NewTrip';
 import { Container } from 'semantic-ui-react'
 
-const Dashboard = (props) => (
+const Dashboard = ({routerProps, user}) => (
   <Container textAlign='center'>
     <div className='dashboard' >
       <br></br>
-      <NewTrip />
+
+      <NewTrip user={user} routerProps={routerProps} />
       <UserTrips trips={props.user.trips}/>
+
     </div>
   </Container>
 )

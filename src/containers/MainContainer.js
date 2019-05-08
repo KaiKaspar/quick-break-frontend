@@ -12,7 +12,34 @@ const loginUrl = baseUrl + 'login'
 class MainContainer extends Component {
 
   state = {
-    currentUser: {}
+    currentUser: {
+  "id": 5,
+  "name": "Max",
+  "trips": [
+    {
+      "id": 11,
+      "name": "Temples",
+      "location": "India",
+      "month": 10,
+      "duration": 7,
+      "trip_type": "adventure",
+      "users": [
+        "Max"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Max test trip",
+      "location": "Australia",
+      "month": 7,
+      "duration": 7,
+      "trip_type": "beach",
+      "users": [
+        "Max"
+      ]
+    }
+  ]
+}
   }
 
   getCurrentUser = name => {
@@ -38,7 +65,7 @@ class MainContainer extends Component {
       <Router>
         <div className="MainContainer">
           <Route exact path='/' component={() => <Homepage signIn={getCurrentUser} validUser={validUser} />} />
-          <Route path='/dashboard' component={() => <Dashboard user={this.state.currentUser} />} />
+          <Route exact path='/dashboard' component={routerProps => <Dashboard user={this.state.currentUser} routerProps={routerProps} />} />
         </div>
       </Router>
     )
