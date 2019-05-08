@@ -8,8 +8,10 @@ const Dashboard = ({routerProps, user}) => (
   <Container textAlign='center'>
     <div className='dashboard' >
       <br></br>
+
       <NewTrip user={user} routerProps={routerProps} />
-      <UserTrips />
+      <UserTrips trips={props.user.trips}/>
+
     </div>
   </Container>
 )

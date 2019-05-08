@@ -1,5 +1,5 @@
 #Navbar {
-  text-align: center;
+  /* text-align: center; */
   background-color: #F7F9FB;
   min-height: 6vh;
 }
@@ -31,6 +31,13 @@
   justify-content: space-evenly
 }
 
+.trip-show {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly
+}
+
 .hompepageItem {
   background-color: #F7F9FB;
   padding: 1rem;
@@ -38,6 +45,15 @@
   border-radius: 20px;
   width: 30%;
   color: #687864;
+}
+
+.trip-show-item {
+  background: #8fc1e3;
+  border: 5px solid #8fc1e3;
+  border-radius: 10px;
+  color: #687864;
+  margin: 1rem;
+  width: 100%;
 }
 
 .dashboard {
