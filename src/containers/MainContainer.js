@@ -64,7 +64,7 @@ class MainContainer extends Component {
       <Router>
         <div className="MainContainer">
           <Route exact path='/' component={() => <Homepage signIn={getCurrentUser} validUser={validUser} />} />
-          <Route exact path='/dashboard' component={() => <Dashboard user={this.state.currentUser} />} />
+          <Route exact path='/dashboard' component={routerProps => <Dashboard user={this.state.currentUser} routerProps={routerProps} />} />
         </div>
       </Router>
     );

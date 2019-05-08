@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Input, Dropdown } from 'semantic-ui-react'
+import { Input, Button } from 'semantic-ui-react'
+
+import MonthDropdown from './MonthDropdown';
+import TripTypeDropdown from './TripTypeDropdown';
 
 class NewTrip extends Component {
 
@@ -10,57 +13,38 @@ class NewTrip extends Component {
     month: null
   }
 
-  handleInputChange = ({target: {name, value}}) => {
+  handleInputChange = (e, {name, value}) => {
     this.setState({
       [name]: value
     })
   }
 
+  submit = () => {
+    const { name, location, tripType, month } = this.state
+    if(name && location && tripType && month !== null) {
+      const config = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ trip: {...this.state, user_ids: [this.props.user.id]}})
+      }
+      fetch('http://localhost:3000/trips', config)
+        .then(res => res.json())
+        .then(trip => this.props.routerProps.history.push('/ShowTrip'))
+    } else {
+      alert('Please fill in all fileds to create a trip')
+    }
+  }
+
   render() {
-
-    {/*const options = [
-      { key: 'af', text: 'Africa', value: 'Africa' },
-      { key: 'as', text: 'Asia', value: 'Asia' },
-      { key: 'ca', text: 'Central America', value: 'Central America' },
-      { key: 'ee', text: 'Eastern Europe', value: 'Eastern Europe' },
-      { key: 'eu', text: 'European Union', value: 'European Union' },
-      { key: 'me', text: 'Middle East', value: 'Middle East' },
-      { key: 'na', text: 'North America', value: 'North America' },
-      { key: 'oc', text: 'Oceania', value: 'Oceania' },
-      { key: 'sa', text: 'South America', value: 'South America' },
-      { key: 'cb', text: 'Caribbean', value: 'Caribbean' },
-    ]*/}
-
-    const months = [
-      {name: 'January', value: 0},
-      {name: 'February', value: 1},
-      {name: 'March', value: 2},
-      {name: 'April', value: 3},
-      {name: 'May', value: 4},
-      {name: 'June', value: 5},
-      {name: 'July', value: 6},
-      {name: 'August', value: 7},
-      {name: 'September', value: 8},
-      {name: 'October', value: 9},
-      {name: 'November', value: 10},
-      {name: 'December', value: 11}
-    ]
-
-    const monthOptions = months.map(m => ({
-      key: m.name,
-      text: m.name,
-      value: m.value
-    }))
-
-
 
     return (
       <div className='new-trip'>
         <h2>Start a new trip!</h2>
         <Input fluid name='name' label='Name' focus placeholder='Trip name...' onChange={this.handleInputChange} />
         <Input fluid name='location' label='Location' focus placeholder='Where are you going?' onChange={this.handleInputChange} />
-          <Dropdown inline selection placeholder='When do you want to go?' options={monthOptions} />
-          <Dropdown inline selection placeholder='What type of trip is it?' options={monthOptions} />
+        <MonthDropdown handleInputChange={this.handleInputChange}/>
+        <TripTypeDropdown handleInputChange={this.handleInputChange}/>
+        <button className='ui button' onClick={this.submit} >Let's go!</button>
       </div>
     );
   }
@@ -68,3 +52,17 @@ class NewTrip extends Component {
 }
 
 export default NewTrip;
+
+
+{/*const options = [
+  { key: 'af', text: 'Africa', value: 'Africa' },
+  { key: 'as', text: 'Asia', value: 'Asia' },
+  { key: 'ca', text: 'Central America', value: 'Central America' },
+  { key: 'ee', text: 'Eastern Europe', value: 'Eastern Europe' },
+  { key: 'eu', text: 'European Union', value: 'European Union' },
+  { key: 'me', text: 'Middle East', value: 'Middle East' },
+  { key: 'na', text: 'North America', value: 'North America' },
+  { key: 'oc', text: 'Oceania', value: 'Oceania' },
+  { key: 'sa', text: 'South America', value: 'South America' },
+  { key: 'cb', text: 'Caribbean', value: 'Caribbean' },
+  ]*/}

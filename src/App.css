@@ -55,3 +55,8 @@
 .ui.input {
   margin: 1rem
 }
+
+.dropdown-container {
+  display: inline;
+  margin: 1rem
+}
