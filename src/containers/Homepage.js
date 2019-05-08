@@ -1,12 +1,11 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom';
 
 import SignIn from '../components/SignIn'
 import About from '../components/About'
 
-const Homepage = ({signIn, validUser}) => (
+const Homepage = ({signIn, validUser, routerProps}) => (
   <div className='homepage'>
-    {validUser && <Redirect to='/dashboard' />}
+    {validUser && routerProps.history.push('/dashboard')}
     <About />
     <SignIn signIn={signIn}/>
   </div>

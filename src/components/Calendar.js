@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css'
@@ -19,7 +19,6 @@ class Calendar extends Component {
   handleDayClick = (day, {selected}) => {
     const {selectedDays} = this.state
     if (selected) {
-      const selectedIndex = selectedDays.indexOf(day)
       this.setState({selectedDays: selectedDays.filter(d => !DateUtils.isSameDay(d, day))})
     } else {
       this.setState({selectedDays: [...selectedDays, day]})

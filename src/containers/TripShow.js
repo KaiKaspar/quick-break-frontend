@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Segment } from 'semantic-ui-react'
 import TripDetails from '../components/TripDetails';
 import TripUsers from '../components/TripUsers';
 

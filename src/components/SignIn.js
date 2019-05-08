@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Header, Input, Divider, Button } from 'semantic-ui-react';
-import { Redirect } from 'react-router-dom';
 
 class SignIn extends Component {
 

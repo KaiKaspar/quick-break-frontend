@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import Homepage from './Homepage';
 import Dashboard from './Dashboard';
-import TripShow from './TripShow';
 
 const baseUrl = 'http://localhost:3000/'
 const loginUrl = baseUrl + 'login'
@@ -55,16 +54,10 @@ class MainContainer extends Component {
     const validUser = Object.keys(currentUser).length > 0 &&
     !Object.keys(currentUser).includes('error')
 
-    {/*return (
-      <div className="MainContainer">
-        <TripShow />
-      </div>
-    )*/}
-
     return (
       <Router>
         <div className="MainContainer">
-          <Route exact path='/' component={() => <Homepage signIn={getCurrentUser} validUser={validUser} />} />
+          <Route exact path='/' component={routerProps => <Homepage signIn={getCurrentUser} validUser={validUser} routerProps={routerProps} />} />
           <Route exact path='/dashboard' component={routerProps => <Dashboard user={this.state.currentUser} routerProps={routerProps} />} />
         </div>
       </Router>
