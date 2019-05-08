@@ -10,7 +10,7 @@ const Dashboard = ({routerProps, user}) => (
       <br></br>
 
       <NewTrip user={user} routerProps={routerProps} />
-      <UserTrips trips={props.user.trips}/>
+      <UserTrips trips={user.trips}/>
 
     </div>
   </Container>

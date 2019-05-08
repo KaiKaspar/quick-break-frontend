@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Calander from './Calander';
+import Calendar from './Calendar';
 import TripName from './TripName';
 
 class TripDetails extends Component {
@@ -9,7 +9,7 @@ class TripDetails extends Component {
       <div className="trip-show-item">
         <TripName />
         <br></br>
-        <Calander />
+        <Calendar />
       </div>
     );
   }
