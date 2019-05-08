@@ -12,34 +12,36 @@ class MainContainer extends Component {
 
   state = {
     currentUser: {
-  "id": 5,
-  "name": "Max",
-  "trips": [
-    {
-      "id": 11,
-      "name": "Temples",
-      "location": "India",
-      "month": 10,
-      "duration": 7,
-      "trip_type": "adventure",
-      "users": [
-        "Max"
-      ]
-    },
-    {
-      "id": 12,
-      "name": "Max test trip",
-      "location": "Australia",
-      "month": 7,
-      "duration": 7,
-      "trip_type": "beach",
-      "users": [
-        "Max"
+      "id": 5,
+      "name": "Max",
+      "trips": [
+        {
+          "id": 11,
+          "name": "Temples",
+          "location": "India",
+          "month": 10,
+          "duration": 7,
+          "trip_type": "adventure",
+          "users": [
+            "Max"
+          ]
+        },
+        {
+          "id": 12,
+          "name": "Max test trip",
+          "location": "Australia",
+          "month": 7,
+          "duration": 7,
+          "trip_type": "beach",
+          "users": [
+            "Max"
+          ]
+        }
       ]
     }
-  ]
-}
   }
+
+
 
   getCurrentUser = name => {
     fetch(loginUrl + `/${name}`)

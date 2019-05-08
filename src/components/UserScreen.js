@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Dashboard from '../containers/Dashboard';
+import TripShow from '../containers/TripShow';
 
 class UserScreen extends Component {
 
@@ -15,7 +16,7 @@ class UserScreen extends Component {
       <React.Fragment>
         {
           this.state.selectedTrip
-          ? <div></div>
+          ? <TripShow trip={this.state.selectedTrip.id} />
           : <Dashboard user={this.props.user} selectTrip={this.selectTrip}/>
         }
       </React.Fragment>

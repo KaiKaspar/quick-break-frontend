@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react'
-import TripShow from '../containers/TripShow'
 import { Redirect } from 'react-router-dom';
 
 class Trip extends Component {
@@ -8,7 +7,7 @@ class Trip extends Component {
   render() {
     const {trip, selectTrip} = this.props
 
-    const {name, start_date, duration, trip_type, location, month} = trip
+    const {name, trip_type, location, month} = trip
 
     let tripPic
 

@@ -76,3 +76,9 @@
   display: inline;
   margin: 1rem
 }
+
+#calendar-container {
+  background-color: #F7F9FB;
+  border-radius: 20px;
+  margin: 3rem 2rem
+}
