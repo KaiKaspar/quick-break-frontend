@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import Homepage from './Homepage';
-import Dashboard from './Dashboard';
+import UserScreen from '../components/UserScreen';
 
 const baseUrl = 'http://localhost:3000/'
 const loginUrl = baseUrl + 'login'
@@ -58,12 +58,10 @@ class MainContainer extends Component {
       <Router>
         <div className="MainContainer">
           <Route exact path='/' component={routerProps => <Homepage signIn={getCurrentUser} validUser={validUser} routerProps={routerProps} />} />
-          <Route path='/dashboard' component={routerProps => <Dashboard user={this.state.currentUser} routerProps={routerProps} />} />
-          {/*<Route path='/TripShow' component={() => <TripShow trip={this.props.trip} />} />*/}
+          <Route path='/user-screen' component={routerProps => <UserScreen user={this.state.currentUser} routerProps={routerProps} />} />
         </div>
       </Router>
     )
-
   }
 }
 
