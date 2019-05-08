@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import Calander from './Calander';
+import Calendar from './Calendar';
 import TripName from './TripName';
 
 class TripDetails extends Component {
 
   render() {
+    debugger
     return (
       <div className="trip-show-item">
-        <TripName />
+        <TripName trip={this.props.trip}/>
         <br></br>
-        <Calander />
+        <Calendar month={this.props.trip.month}/>
       </div>
     );
   }
