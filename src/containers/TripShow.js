@@ -7,7 +7,7 @@ const tripsUrl = 'http://localhost:3000/trips/'
 class TripShow extends Component {
 
   state = {
-    trip: {users: [], month:null}
+    trip: null
   }
 
   componentDidMount () {
@@ -16,11 +16,13 @@ class TripShow extends Component {
       .then(trip => this.setState({trip}))
   }
 
+  updateTripDates = trip => {this.setState({trip})}
+
   render() {
     return (
       <div className='trip-show'>
-        <TripDetails trip={this.state.trip}/>
-        <TripUsers trip={this.state.trip}/>
+        {this.state.trip && <TripDetails trip={this.state.trip} updateTripDates={this.updateTripDates} selectTrip={this.props.selectTrip} />}
+        {this.state.trip && <TripUsers trip={this.state.trip}/>}
       </div>
     );
   }
