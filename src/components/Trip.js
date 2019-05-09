@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react'
-import TripShow from '../containers/TripShow'
 import { Redirect } from 'react-router-dom';
 
 class Trip extends Component {
 
-  handleClick = () => {
-    console.log(this.props.trip.name);
-  }
-
   render() {
+    const {trip, selectTrip} = this.props
+
+    const {name, trip_type, location, month} = trip
 
     let tripPic
 
-    switch(this.props.trip.trip_type) {
+    switch(trip_type) {
     case 'beach':
       tripPic = 'https://jetlookup.com/blog/wp-content/uploads/2016/11/perfect-destinations-for-beach-holiday-on-winter-7-900x450.jpg'
       break
@@ -30,51 +28,10 @@ class Trip extends Component {
       tripPic = 'https://www.telegraph.co.uk/content/dam/Travel/2018/January/white-plane-sky.jpg?imwidth=450'
     }
 
-    let tripMonth
-
-    switch(this.props.trip.month) {
-    case 1:
-      tripMonth = 'January'
-      break
-    case 2:
-      tripMonth = 'Febuary'
-      break
-    case 3:
-      tripMonth = 'March'
-      break
-    case 4:
-      tripMonth = 'April'
-      break
-      case 5:
-        tripMonth = 'May'
-        break
-      case 6:
-        tripMonth = 'June'
-        break
-      case 7:
-        tripMonth = 'July'
-        break
-      case 8:
-        tripMonth = 'August'
-        break
-        case 9:
-          tripMonth = 'September'
-          break
-        case 10:
-          tripMonth = 'October'
-          break
-        case 11:
-          tripMonth = 'November'
-          break
-    default:
-      tripMonth = 'December'
-    }
-
-
-    const {name, start_date, duration, trip_type, location} = this.props.trip
+    const tripMonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][month]
 
     return (
-        <Card style={{background: '#F7F9FB'}} onClick={() => this.props.routerProps.history.push('/TripShow')}>
+        <Card style={{background: '#F7F9FB'}} onClick={() => selectTrip(trip)}>
           <Image src={tripPic} />
           <Card.Content>
             <Card.Header>
