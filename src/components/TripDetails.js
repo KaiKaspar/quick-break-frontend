@@ -10,9 +10,9 @@ class TripDetails extends Component {
       <div className="trip-show-item">
         <TripName trip={this.props.trip}/>
         <div id='calendar-container'>
-          <Calendar month={this.props.trip.month}/>
+          <Calendar trip={this.props.trip} updateTripDates={this.props.updateTripDates}/>
         </div>
-
+        <button className='ui button' onClick={() => this.props.selectTrip(null)}>Back to dashboard</button>
       </div>
     );
   }
