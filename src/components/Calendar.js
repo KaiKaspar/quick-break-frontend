@@ -11,12 +11,6 @@ class Calendar extends Component {
     selectedDays: this.props.trip.unavailable_dates.split('-').filter(d => d!== '').map(d => new Date(d))
   }
 
-  // componentDidMount () {
-  //   this.setState({
-  //     selectedDays: this.props.trip.unavailable_dates.split('-').filter(d => d!== '').map(d => new Date(d))
-  //   })
-  // }
-
   modifiersStyles = {
     selected: {
       backgroundColor: 'red',
