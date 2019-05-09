@@ -21,6 +21,8 @@ class NewTrip extends Component {
 
   submit = () => {
     const { name, location, tripType, month } = this.state
+    const { selectTrip } = this.props
+
     if(name && location && tripType && month !== null) {
       const config = {
         method: 'POST',
@@ -29,7 +31,7 @@ class NewTrip extends Component {
       }
       fetch('http://localhost:3000/trips', config)
         .then(res => res.json())
-        .then(trip => this.props.routerProps.history.push('/ShowTrip'))
+        .then(trip => selectTrip(trip))
     } else {
       alert('Please fill in all fileds to create a trip')
     }
