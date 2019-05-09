@@ -67,7 +67,6 @@ class Calendar extends Component {
 
   render() {
     const {month} = this.props.trip
-    console.log(this.state.selectedDays)
     return (
       <Fragment>
         <DayPicker onDayClick={this.handleDayClick} selectedDays={this.state.selectedDays} modifiersStyles={this.modifiersStyles} renderDay={this.renderDay} canChangeMonth={false} month={new Date(2019, month)} />

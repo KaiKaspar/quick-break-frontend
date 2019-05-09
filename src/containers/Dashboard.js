@@ -7,7 +7,7 @@ const Dashboard = ({user, selectTrip}) => (
   <Container textAlign='center'>
     <div className='dashboard' >
       <br></br>
-      <NewTrip user={user} />
+      <NewTrip user={user} selectTrip={selectTrip} />
       <UserTrips trips={user.trips} selectTrip={selectTrip} />
     </div>
   </Container>

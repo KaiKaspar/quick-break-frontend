@@ -9,7 +9,10 @@ class UserScreen extends Component {
     selectedTrip: null
   }
 
-  selectTrip = selectedTrip => {this.setState({selectedTrip})}
+  selectTrip = selectedTrip => {
+    debugger;
+    this.setState({selectedTrip})
+  }
 
   render() {
     return (
