@@ -46,10 +46,6 @@ class Calendar extends Component {
     );
   }
 
-  testHandler = () => {
-    debugger
-  }
-
   render() {
     const month = this.props.month - 1
     return (

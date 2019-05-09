@@ -5,6 +5,7 @@ import TripName from './TripName';
 class TripDetails extends Component {
 
   render() {
+
     return (
       <div className="trip-show-item">
         <TripName trip={this.props.trip}/>

@@ -16,7 +16,7 @@ class UserScreen extends Component {
       <React.Fragment>
         {
           this.state.selectedTrip
-          ? <TripShow trip={this.state.selectedTrip.id} />
+          ? <TripShow tripId={this.state.selectedTrip.id} />
           : <Dashboard user={this.props.user} selectTrip={this.selectTrip}/>
         }
       </React.Fragment>

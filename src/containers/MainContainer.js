@@ -12,11 +12,11 @@ class MainContainer extends Component {
 
   state = {
     currentUser: {
-      "id": 5,
+      "id": 1,
       "name": "Max",
       "trips": [
         {
-          "id": 11,
+          "id": 3,
           "name": "Temples",
           "location": "India",
           "month": 10,
@@ -27,7 +27,7 @@ class MainContainer extends Component {
           ]
         },
         {
-          "id": 12,
+          "id": 4,
           "name": "Max test trip",
           "location": "Australia",
           "month": 7,
