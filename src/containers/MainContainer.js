@@ -7,50 +7,38 @@ import UserScreen from '../components/UserScreen';
 
 const baseUrl = 'http://localhost:3000/'
 const loginUrl = baseUrl + 'login'
+const usersUrl = baseUrl + 'users'
 
 class MainContainer extends Component {
 
   state = {
-    currentUser: {
-      "id": 1,
-      "name": "Max",
-      "trips": [
-        {
-          "id": 3,
-          "name": "Temples",
-          "location": "India",
-          "month": 10,
-          "duration": 7,
-          "trip_type": "adventure",
-          "users": [
-            "Max"
-          ]
-        },
-        {
-          "id": 4,
-          "name": "Max test trip",
-          "location": "Australia",
-          "month": 7,
-          "duration": 7,
-          "trip_type": "beach",
-          "users": [
-            "Max"
-          ]
-        }
-      ]
-    }
+    currentUser: {}
   }
 
 
 
-  getCurrentUser = name => {
+  signIn = name => {
     fetch(loginUrl + `/${name}`)
       .then(res => res.json())
-      .then(currentUser => this.setState({currentUser}))
+      .then(this.setCurrentUser)
   }
 
+  createUser = name => {
+    const config = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name: name})
+    }
+
+    fetch(usersUrl, config)
+      .then(res => res.json())
+      .then(this.setCurrentUser)
+  }
+
+  setCurrentUser = currentUser => {this.setState({currentUser})}
+
   render() {
-    const {getCurrentUser} = this
+    const {signIn, createUser} = this
     const {currentUser} = this.state
 
     const validUser = Object.keys(currentUser).length > 0 &&
@@ -59,7 +47,7 @@ class MainContainer extends Component {
     return (
       <Router>
         <div className="MainContainer">
-          <Route exact path='/' component={routerProps => <Homepage signIn={getCurrentUser} validUser={validUser} routerProps={routerProps} />} />
+          <Route exact path='/' component={routerProps => <Homepage signIn={signIn} createUser={createUser} validUser={validUser} routerProps={routerProps} />} />
           <Route path='/user-screen' component={routerProps => <UserScreen user={this.state.currentUser} routerProps={routerProps} />} />
         </div>
       </Router>
