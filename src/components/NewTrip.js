@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input } from 'semantic-ui-react'
+import { Input, Dropdown } from 'semantic-ui-react'
 
 import MonthDropdown from './MonthDropdown';
 import TripTypeDropdown from './TripTypeDropdown';
@@ -7,9 +7,11 @@ import TripTypeDropdown from './TripTypeDropdown';
 class NewTrip extends Component {
 
   state = {
+    countries: [],
     name: '',
-    location: '',
-    tripType: '',
+    country: '',
+    city: '',
+    trip_type: '',
     month: null
   }
 
@@ -20,10 +22,10 @@ class NewTrip extends Component {
   }
 
   submit = () => {
-    const { name, location, tripType, month } = this.state
+    const { name, country, trip_type, month } = this.state
     const { selectTrip } = this.props
 
-    if(name && location && tripType && month !== null) {
+    if(name && country && trip_type && month !== null) {
       const config = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -37,13 +39,23 @@ class NewTrip extends Component {
     }
   }
 
+  componentDidMount() {
+    fetch(`https://restcountries.eu/rest/v2/`)
+      .then(res => res.json())
+      .then(countries => this.setState({ countries }))
+  }
+
   render() {
 
     return (
       <div className='new-trip'>
         <h2>Start a new trip!</h2>
         <Input fluid name='name' label='Name' focus placeholder='Trip name...' onChange={this.handleInputChange} />
-        <Input fluid name='location' label='Location' focus placeholder='Where are you going?' onChange={this.handleInputChange} />
+        <Input list='countries' placeholder='Choose a country...' fluid name='country' label='Country' onChange={this.handleInputChange}/>
+          <datalist id='countries'>
+            {this.state.countries.map(c => <option value={c.name} key={c.id}/>)}
+          </datalist>
+        <Input fluid name='city' label='City' focus placeholder='*optional' onChange={this.handleInputChange} />
         <MonthDropdown handleInputChange={this.handleInputChange}/>
         <TripTypeDropdown handleInputChange={this.handleInputChange}/>
         <button className='ui button' onClick={this.submit} >Let's go!</button>

@@ -10,7 +10,6 @@ class UserScreen extends Component {
   }
 
   selectTrip = selectedTrip => {
-    debugger;
     this.setState({selectedTrip})
   }
 

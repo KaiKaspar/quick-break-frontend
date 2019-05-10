@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
 import MainContainer from './containers/MainContainer'
 
 function App() {
@@ -9,7 +8,6 @@ function App() {
     <div className="App">
       <Navbar />
       <MainContainer />
-      <Footer />
     </div>
   );
 }

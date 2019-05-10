@@ -7,7 +7,7 @@ class Trip extends Component {
   render() {
     const {trip, selectTrip} = this.props
 
-    const {name, trip_type, location, month} = trip
+    const {name, trip_type, country, month, city} = trip
 
     let tripPic
 
@@ -40,7 +40,7 @@ class Trip extends Component {
             <Card.Meta>
               <span className='date'>{tripMonth}</span>
             </Card.Meta>
-            <Card.Description>{location}</Card.Description>
+            <Card.Description><p>{country}</p><p>{city}</p></Card.Description>
           </Card.Content>
           <Card.Content extra>
             <p>

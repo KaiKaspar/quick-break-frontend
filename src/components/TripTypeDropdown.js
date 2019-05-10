@@ -22,7 +22,7 @@ class TripTypeDropdown extends Component {
 
     return (
       <div className='dropdown-container'>
-        <Select name='tripType' placeholder='What type of trip is it?' options={typeOptions} onChange={this.props.handleInputChange} />
+        <Select name='trip_type' placeholder='What type of trip is it?' options={typeOptions} onChange={this.props.handleInputChange} />
       </div>
     );
   }

@@ -5,10 +5,9 @@ import TripName from './TripName';
 class TripDetails extends Component {
 
   render() {
-
     return (
       <div className="trip-show-item">
-        <TripName trip={this.props.trip}/>
+        <TripName trip={this.props.trip} trip_country={this.props.trip_country}/>
         <div id='calendar-container'>
           <Calendar trip={this.props.trip} updateTripDates={this.props.updateTripDates}/>
         </div>
