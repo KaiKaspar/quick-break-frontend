@@ -29,7 +29,7 @@ class NewTrip extends Component {
       }
       fetch('http://localhost:3000/trips', config)
         .then(res => res.json())
-        .then(trip => this.props.routerProps.history.push('/ShowTrip'))
+        .then(console.log)
     } else {
       alert('Please fill in all fileds to create a trip')
     }

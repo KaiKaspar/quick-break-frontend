@@ -11,37 +11,8 @@ const loginUrl = baseUrl + 'login'
 class MainContainer extends Component {
 
   state = {
-    currentUser: {
-      "id": 1,
-      "name": "Max",
-      "trips": [
-        {
-          "id": 3,
-          "name": "Temples",
-          "location": "India",
-          "month": 10,
-          "duration": 7,
-          "trip_type": "adventure",
-          "users": [
-            "Max"
-          ]
-        },
-        {
-          "id": 4,
-          "name": "Max test trip",
-          "location": "Australia",
-          "month": 7,
-          "duration": 7,
-          "trip_type": "beach",
-          "users": [
-            "Max"
-          ]
-        }
-      ]
-    }
+    currentUser: {}
   }
-
-
 
   getCurrentUser = name => {
     fetch(loginUrl + `/${name}`)
