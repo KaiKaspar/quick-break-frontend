@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
+import { Card } from 'semantic-ui-react'
+
 class User extends Component {
 
   render() {
     return (
-      <div>
-        <h3>Kai</h3>
-        <h3>Max</h3>
+
+      <div onClick={() => this.props.handleClick(this.props.user)}>
+      <Card fluid header={this.props.user.name} />
       </div>
     );
   }

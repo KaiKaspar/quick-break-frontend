@@ -15,8 +15,6 @@ class MainContainer extends Component {
     currentUser: {}
   }
 
-
-
   signIn = name => {
     fetch(loginUrl + `/${name}`)
       .then(res => res.json())
