@@ -7,6 +7,7 @@ import UserScreen from '../components/UserScreen';
 
 const baseUrl = 'http://localhost:3000/'
 const loginUrl = baseUrl + 'login'
+const usersUrl = baseUrl + 'users'
 
 class MainContainer extends Component {
 
@@ -14,14 +15,28 @@ class MainContainer extends Component {
     currentUser: {}
   }
 
-  getCurrentUser = name => {
+  signIn = name => {
     fetch(loginUrl + `/${name}`)
       .then(res => res.json())
-      .then(currentUser => this.setState({currentUser}))
+      .then(this.setCurrentUser)
   }
 
+  createUser = name => {
+    const config = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name: name})
+    }
+
+    fetch(usersUrl, config)
+      .then(res => res.json())
+      .then(this.setCurrentUser)
+  }
+
+  setCurrentUser = currentUser => {this.setState({currentUser})}
+
   render() {
-    const {getCurrentUser} = this
+    const {signIn, createUser} = this
     const {currentUser} = this.state
 
     const validUser = Object.keys(currentUser).length > 0 &&
@@ -30,7 +45,7 @@ class MainContainer extends Component {
     return (
       <Router>
         <div className="MainContainer">
-          <Route exact path='/' component={routerProps => <Homepage signIn={getCurrentUser} validUser={validUser} routerProps={routerProps} />} />
+          <Route exact path='/' component={routerProps => <Homepage signIn={signIn} createUser={createUser} validUser={validUser} routerProps={routerProps} />} />
           <Route path='/user-screen' component={routerProps => <UserScreen user={this.state.currentUser} routerProps={routerProps} />} />
         </div>
       </Router>
