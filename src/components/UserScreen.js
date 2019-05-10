@@ -9,14 +9,17 @@ class UserScreen extends Component {
     selectedTrip: null
   }
 
-  selectTrip = selectedTrip => {this.setState({selectedTrip})}
+  selectTrip = selectedTrip => {
+    debugger;
+    this.setState({selectedTrip})
+  }
 
   render() {
     return (
       <React.Fragment>
         {
           this.state.selectedTrip
-          ? <TripShow tripId={this.state.selectedTrip.id} />
+          ? <TripShow tripId={this.state.selectedTrip.id} selectTrip={this.selectTrip} />
           : <Dashboard user={this.props.user} selectTrip={this.selectTrip}/>
         }
       </React.Fragment>
